@@ -1,5 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FEHeaderMenu"
+  s.version      = "0.0.1"
   s.summary      = "头部分组菜单，功能类似于UISegmentControl或者UITabBarController"
   s.homepage     = "https://github.com/wzf/FEHeaderMenu"
   s.license      = "MIT"
