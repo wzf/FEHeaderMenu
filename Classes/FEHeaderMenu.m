@@ -25,6 +25,8 @@
 
 - (void)dealloc
 {
+    [self.iCollectionView removeObserver:self forKeyPath:@"contentOffset"];
+    
     [self.iCollectionView removeFromSuperview];
     [self setICollectionView:nil];
     
@@ -34,8 +36,6 @@
     
     self.iTitleAtIndex     = nil;
     self.iItemClickAtIndex = nil;
-    
-    [self.iCollectionView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 - (void)layoutSubviews
