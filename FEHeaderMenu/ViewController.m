@@ -27,11 +27,16 @@
         [self reloadTableViewData:title];
     }];
     
-    headMenu.frame = _menuView.bounds;
+    //不需要添加frame,FEHeaderMenu会根据edgeInsetsInSuperView增加constranits，通过autolayout方式完成布局
     [_menuView addSubview:headMenu];
     
     //
     [self reloadTableViewData:titles[headMenu.currentIndex]];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
 }
 
 - (void)reloadTableViewData:(NSString *)string
