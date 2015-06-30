@@ -46,4 +46,10 @@ typedef void      (^itemClickAtIndex)(NSInteger index, NSString *title);
  */
 - (void)changeItemToIndex:(NSInteger)index animation:(BOOL)animation;
 
+
+/**
+ * 在父类中的UIEdgeInsets
+ */
+@property (assign, nonatomic) UIEdgeInsets edgeInsetsInSuperView; //
+
 @end

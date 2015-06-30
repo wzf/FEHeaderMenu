@@ -19,6 +19,7 @@
     if (self) {
         self.iTitles = [NSMutableArray arrayWithCapacity:3];    //title数组
         self.currentIndex       = 0;    //默认显示
+        self.edgeInsetsInSuperView = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     return self;
 }
@@ -38,12 +39,6 @@
     self.iItemClickAtIndex = nil;
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];    
-    [self reloadItemsIfNeeds];
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (object == self.iCollectionView && [keyPath isEqualToString:@"contentOffset"]) {
@@ -57,6 +52,26 @@
         // 移动
         self.iMarkView.center = CGPointMake(point.x, self.iMarkView.center.y);
     }
+}
+
+- (void)didMoveToSuperview
+{
+    [super didMoveToSuperview];
+    
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    NSDictionary *paddings = @{@"left":@(_edgeInsetsInSuperView.left),
+                               @"right":@(_edgeInsetsInSuperView.right),
+                               @"top":@(_edgeInsetsInSuperView.top),
+                               @"bottom":@(_edgeInsetsInSuperView.bottom)};
+    UIView *selfView = self;
+    [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-left-[selfView]-right-|" options:0 metrics:paddings views:NSDictionaryOfVariableBindings(selfView)]];
+    [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[selfView]-bottom-|" options:0 metrics:paddings views:NSDictionaryOfVariableBindings(selfView)]];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self reloadItemsIfNeeds];
 }
 
 #pragma mark -
