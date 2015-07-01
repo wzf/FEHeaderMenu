@@ -13,6 +13,5 @@
 @property (weak, nonatomic) IBOutlet UIView *menuView; //
 @property (weak, nonatomic) IBOutlet UITableView *iTableView; //
 @property (copy, nonatomic) NSString *cellPrefixStr; //
-
 @end
 

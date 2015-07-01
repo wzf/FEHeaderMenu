@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkO-My-R31" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="309"/>
+            <point key="canvasLocation" x="796" y="309"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sxg-aI-hRW">
@@ -73,12 +73,42 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="THC-Kx-OBq" kind="relationship" relationship="rootViewController" id="hfo-cW-SsL"/>
+                        <segue destination="wzl-Ed-2lw" kind="relationship" relationship="rootViewController" id="QDB-4u-UsW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uW-2r-ctz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="309"/>
+            <point key="canvasLocation" x="119" y="309"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fNo-bi-8Sy">
+            <objects>
+                <viewController id="wzl-Ed-2lw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G2B-IU-DrX"/>
+                        <viewControllerLayoutGuide type="bottom" id="VKb-0H-Kpq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NzB-DT-St1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRj-5z-hXf">
+                                <rect key="frame" x="137" y="220" width="46" height="30"/>
+                                <state key="normal" title="enter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="THC-Kx-OBq" kind="push" id="Lcr-0p-poh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Le6-vF-xwn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L22-sZ-OUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="309"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

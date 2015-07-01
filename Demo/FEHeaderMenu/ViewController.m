@@ -9,22 +9,28 @@
 #import "ViewController.h"
 #import "FEHeaderMenu.h"
 
+@interface ViewController()
+@property (weak, nonatomic) FEHeaderMenu *headerMenu;
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
-    NSArray *titles = @[@"未读",@"已读",@"垃圾箱"];
+    NSArray *titles = @[@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱"];
     
+    __weak typeof(self) weakSelf = self;
     FEHeaderMenu *headMenu = [FEHeaderMenu menuWithTitleAtIndex:^NSString *(NSInteger index, BOOL *isStop) {
         if (index == titles.count-1) {
             *isStop = YES;
         }
         return titles[index];
         
-    } clickAtIndex:^(NSInteger index, NSString *title) {
-        [self reloadTableViewData:title];
+    } clickAtIndex:^(FEHeaderMenu *menu, NSInteger index, NSString *title) {
+        [menu showWarning:NO AtIndex:index];
+        [weakSelf reloadTableViewData:title];
     }];
     
     //不需要添加frame,FEHeaderMenu会根据edgeInsetsInSuperView增加constranits，通过autolayout方式完成布局
@@ -32,6 +38,14 @@
     
     //
     [self reloadTableViewData:titles[headMenu.currentIndex]];
+    
+    self.headerMenu = headMenu;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [_headerMenu showWarning:YES AtIndex:1];
 }
 
 - (void)viewDidLayoutSubviews

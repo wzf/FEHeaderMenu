@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2E80011B43871C00B9F38B /* FEHeaderMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E7FFA1B43871C00B9F38B /* FEHeaderMenu.m */; };
+		0B2E80021B43871C00B9F38B /* FEHeaderMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E7FFD1B43871C00B9F38B /* FEHeaderMenuItem.m */; };
+		0B2E80031B43871C00B9F38B /* FEHeaderMenu+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E80001B43871C00B9F38B /* FEHeaderMenu+Private.m */; };
 		0B5BAB451B3BA76100D44BAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB441B3BA76100D44BAD /* main.m */; };
 		0B5BAB481B3BA76100D44BAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB471B3BA76100D44BAD /* AppDelegate.m */; };
 		0B5BAB4B1B3BA76100D44BAD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB4A1B3BA76100D44BAD /* ViewController.m */; };
@@ -14,9 +17,6 @@
 		0B5BAB501B3BA76100D44BAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BAB4F1B3BA76100D44BAD /* Images.xcassets */; };
 		0B5BAB531B3BA76100D44BAD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B5BAB511B3BA76100D44BAD /* LaunchScreen.xib */; };
 		0B5BAB5F1B3BA76100D44BAD /* FEHeaderMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB5E1B3BA76100D44BAD /* FEHeaderMenuTests.m */; };
-		0B5BAB6C1B3BA7AB00D44BAD /* FEHeaderMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB6B1B3BA7AB00D44BAD /* FEHeaderMenu.m */; };
-		0B5BAB6F1B3BA7BD00D44BAD /* FEHeaderMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB6E1B3BA7BD00D44BAD /* FEHeaderMenuItem.m */; };
-		0B5BAB731B3BAE8E00D44BAD /* FEHeaderMenu+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB721B3BAE8E00D44BAD /* FEHeaderMenu+Private.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2E7FF91B43871C00B9F38B /* FEHeaderMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEHeaderMenu.h; sourceTree = "<group>"; };
+		0B2E7FFA1B43871C00B9F38B /* FEHeaderMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEHeaderMenu.m; sourceTree = "<group>"; };
+		0B2E7FFC1B43871C00B9F38B /* FEHeaderMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEHeaderMenuItem.h; sourceTree = "<group>"; };
+		0B2E7FFD1B43871C00B9F38B /* FEHeaderMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEHeaderMenuItem.m; sourceTree = "<group>"; };
+		0B2E7FFF1B43871C00B9F38B /* FEHeaderMenu+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FEHeaderMenu+Private.h"; sourceTree = "<group>"; };
+		0B2E80001B43871C00B9F38B /* FEHeaderMenu+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FEHeaderMenu+Private.m"; sourceTree = "<group>"; };
 		0B5BAB3F1B3BA76100D44BAD /* FEHeaderMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEHeaderMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5BAB431B3BA76100D44BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B5BAB441B3BA76100D44BAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,12 +49,6 @@
 		0B5BAB581B3BA76100D44BAD /* FEHeaderMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FEHeaderMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5BAB5D1B3BA76100D44BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B5BAB5E1B3BA76100D44BAD /* FEHeaderMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FEHeaderMenuTests.m; sourceTree = "<group>"; };
-		0B5BAB6A1B3BA7AB00D44BAD /* FEHeaderMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEHeaderMenu.h; sourceTree = "<group>"; };
-		0B5BAB6B1B3BA7AB00D44BAD /* FEHeaderMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEHeaderMenu.m; sourceTree = "<group>"; };
-		0B5BAB6D1B3BA7BD00D44BAD /* FEHeaderMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEHeaderMenuItem.h; sourceTree = "<group>"; };
-		0B5BAB6E1B3BA7BD00D44BAD /* FEHeaderMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEHeaderMenuItem.m; sourceTree = "<group>"; };
-		0B5BAB711B3BAE8E00D44BAD /* FEHeaderMenu+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FEHeaderMenu+Private.h"; sourceTree = "<group>"; };
-		0B5BAB721B3BAE8E00D44BAD /* FEHeaderMenu+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FEHeaderMenu+Private.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +69,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2E7FF81B43871C00B9F38B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0B2E7FF91B43871C00B9F38B /* FEHeaderMenu.h */,
+				0B2E7FFA1B43871C00B9F38B /* FEHeaderMenu.m */,
+				0B2E7FFB1B43871C00B9F38B /* item */,
+				0B2E7FFE1B43871C00B9F38B /* private */,
+			);
+			name = Classes;
+			path = ../../Classes;
+			sourceTree = "<group>";
+		};
+		0B2E7FFB1B43871C00B9F38B /* item */ = {
+			isa = PBXGroup;
+			children = (
+				0B2E7FFC1B43871C00B9F38B /* FEHeaderMenuItem.h */,
+				0B2E7FFD1B43871C00B9F38B /* FEHeaderMenuItem.m */,
+			);
+			path = item;
+			sourceTree = "<group>";
+		};
+		0B2E7FFE1B43871C00B9F38B /* private */ = {
+			isa = PBXGroup;
+			children = (
+				0B2E7FFF1B43871C00B9F38B /* FEHeaderMenu+Private.h */,
+				0B2E80001B43871C00B9F38B /* FEHeaderMenu+Private.m */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
 		0B5BAB361B3BA76100D44BAD = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +120,7 @@
 		0B5BAB411B3BA76100D44BAD /* FEHeaderMenu */ = {
 			isa = PBXGroup;
 			children = (
-				0B5BAB681B3BA78F00D44BAD /* Classes */,
+				0B2E7FF81B43871C00B9F38B /* Classes */,
 				0B5BAB461B3BA76100D44BAD /* AppDelegate.h */,
 				0B5BAB471B3BA76100D44BAD /* AppDelegate.m */,
 				0B5BAB491B3BA76100D44BAD /* ViewController.h */,
@@ -127,35 +157,6 @@
 				0B5BAB5D1B3BA76100D44BAD /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0B5BAB681B3BA78F00D44BAD /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0B5BAB701B3BAE7900D44BAD /* private */,
-				0B5BAB691B3BA78F00D44BAD /* item */,
-				0B5BAB6A1B3BA7AB00D44BAD /* FEHeaderMenu.h */,
-				0B5BAB6B1B3BA7AB00D44BAD /* FEHeaderMenu.m */,
-			);
-			path = Classes;
-			sourceTree = SOURCE_ROOT;
-		};
-		0B5BAB691B3BA78F00D44BAD /* item */ = {
-			isa = PBXGroup;
-			children = (
-				0B5BAB6D1B3BA7BD00D44BAD /* FEHeaderMenuItem.h */,
-				0B5BAB6E1B3BA7BD00D44BAD /* FEHeaderMenuItem.m */,
-			);
-			path = item;
-			sourceTree = "<group>";
-		};
-		0B5BAB701B3BAE7900D44BAD /* private */ = {
-			isa = PBXGroup;
-			children = (
-				0B5BAB711B3BAE8E00D44BAD /* FEHeaderMenu+Private.h */,
-				0B5BAB721B3BAE8E00D44BAD /* FEHeaderMenu+Private.m */,
-			);
-			path = private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,10 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5BAB4B1B3BA76100D44BAD /* ViewController.m in Sources */,
-				0B5BAB6F1B3BA7BD00D44BAD /* FEHeaderMenuItem.m in Sources */,
-				0B5BAB731B3BAE8E00D44BAD /* FEHeaderMenu+Private.m in Sources */,
+				0B2E80021B43871C00B9F38B /* FEHeaderMenuItem.m in Sources */,
+				0B2E80031B43871C00B9F38B /* FEHeaderMenu+Private.m in Sources */,
 				0B5BAB481B3BA76100D44BAD /* AppDelegate.m in Sources */,
-				0B5BAB6C1B3BA7AB00D44BAD /* FEHeaderMenu.m in Sources */,
+				0B2E80011B43871C00B9F38B /* FEHeaderMenu.m in Sources */,
 				0B5BAB451B3BA76100D44BAD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +459,7 @@
 				0B5BAB641B3BA76100D44BAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B5BAB651B3BA76100D44BAD /* Build configuration list for PBXNativeTarget "FEHeaderMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +468,7 @@
 				0B5BAB671B3BA76100D44BAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
