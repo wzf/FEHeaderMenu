@@ -20,52 +20,55 @@
         self.iTitles = [NSMutableArray arrayWithCapacity:3];    //title数组
         self.currentIndex       = 0;    //默认显示
         self.edgeInsetsInSuperView = UIEdgeInsetsMake(0, 0, 0, 0);
+        self.warningItems       = [NSMutableArray array];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [self.iCollectionView removeObserver:self forKeyPath:@"contentOffset"];
-    
-    [self.iCollectionView removeFromSuperview];
-    [self setICollectionView:nil];
-    
+#ifdef DEBUG
+    NSLog(@"FEHeaderMenu dealloc");
+#endif
     [self.iMarkView removeFromSuperview];
     [self setIMarkView:nil];
     
-    
+    [self.iCollectionView removeFromSuperview];
+    [self setICollectionView:nil];
+
     self.iTitleAtIndex     = nil;
     self.iItemClickAtIndex = nil;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (object == self.iCollectionView && [keyPath isEqualToString:@"contentOffset"]) {
-        // 定位选中的item
-        NSIndexPath *currentIndexPath = [NSIndexPath indexPathForItem:_currentIndex inSection:0];
-        UICollectionViewLayoutAttributes *attr = [self.iCollectionView layoutAttributesForItemAtIndexPath:currentIndexPath];
-        
-        // 转移坐标
-        CGPoint point = [self convertPoint:attr.center fromView:self.iCollectionView];
-        
-        // 移动
-        self.iMarkView.center = CGPointMake(point.x, self.iMarkView.center.y);
-    }
+    // 定位选中的item
+    NSIndexPath *currentIndexPath = [NSIndexPath indexPathForItem:_currentIndex inSection:0];
+    UICollectionViewLayoutAttributes *attr = [self.iCollectionView layoutAttributesForItemAtIndexPath:currentIndexPath];
+    
+    // 转移坐标
+    CGPoint point = [self convertPoint:attr.center fromView:self.iCollectionView];
+    
+    // 移动
+    self.iMarkView.center = CGPointMake(point.x, self.iMarkView.center.y);
 }
 
 - (void)didMoveToSuperview
 {
     [super didMoveToSuperview];
     
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSDictionary *paddings = @{@"left":@(_edgeInsetsInSuperView.left),
-                               @"right":@(_edgeInsetsInSuperView.right),
-                               @"top":@(_edgeInsetsInSuperView.top),
-                               @"bottom":@(_edgeInsetsInSuperView.bottom)};
-    UIView *selfView = self;
-    [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-left-[selfView]-right-|" options:0 metrics:paddings views:NSDictionaryOfVariableBindings(selfView)]];
-    [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[selfView]-bottom-|" options:0 metrics:paddings views:NSDictionaryOfVariableBindings(selfView)]];
+    if (!_didAddConstranit) {
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        NSDictionary *paddings = @{@"left"  : @(_edgeInsetsInSuperView.left),
+                                   @"right" : @(_edgeInsetsInSuperView.right),
+                                   @"top"   : @(_edgeInsetsInSuperView.top),
+                                   @"bottom": @(_edgeInsetsInSuperView.bottom)};
+        UIView *selfView = self;
+        [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-left-[selfView]-right-|" options:0 metrics:paddings views:NSDictionaryOfVariableBindings(selfView)]];
+        [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[selfView]-bottom-|" options:0 metrics:paddings views:NSDictionaryOfVariableBindings(selfView)]];
+        
+        _didAddConstranit = YES;
+    }
 }
 
 - (void)layoutSubviews
@@ -83,10 +86,6 @@
     
     // 初始化collectionView
     [self setupItemsMenu];
-    
-    //
-    [self.iCollectionView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-
 }
 
 - (void)_setupTitles:(titleAtIndex)titleAtIndex
@@ -94,11 +93,14 @@
     // 是否停止
     BOOL isStop = NO;
     
-    [_iTitles removeAllObjects];
+    [_iTitles      removeAllObjects];
+    [_warningItems removeAllObjects];
+    
     while (isStop != YES) {
         NSString *title = titleAtIndex(_iTitles.count, &isStop);
         if (title != nil) {
-            [_iTitles addObject:title];
+            [_iTitles      addObject:title];
+            [_warningItems addObject:@(NO)];
         }
     }
 }
@@ -145,4 +147,13 @@
     }];
 }
 
+// 显示index位置的“警告view”
+- (void)showWarning:(BOOL)showOrNot AtIndex:(NSInteger)index;
+{
+    if (self.warningItems.count > index) {
+        [self.warningItems setObject:@(showOrNot) atIndexedSubscript:index];
+        FEHeaderMenuItem *item = (FEHeaderMenuItem *)[self.iCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
+        [item setWarningHidden:!showOrNot];
+    }
+}
 @end

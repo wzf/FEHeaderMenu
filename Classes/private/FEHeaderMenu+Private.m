@@ -7,7 +7,6 @@
 //
 
 #import "FEHeaderMenu+Private.h"
-#import "FEHeaderMenuItem.h"
 #import <objc/runtime.h>
 
 static const NSString *kICollectionKey = @"iCollection";
@@ -91,6 +90,8 @@ static const NSString *kMarkViewLayoutWidthKey   = @"markViewLayoutWidth";
     
     [cell setSelected:(indexPath.item == self.currentIndex)];
     
+    [cell setWarningHidden:![self.warningItems[indexPath.item] boolValue]];
+    
     return cell;
 }
 
@@ -105,7 +106,7 @@ static const NSString *kMarkViewLayoutWidthKey   = @"markViewLayoutWidth";
     self.currentIndex = indexPath.item;
     
     if (self.iItemClickAtIndex) {
-        self.iItemClickAtIndex(indexPath.item, self.iTitles[indexPath.item]);
+        self.iItemClickAtIndex(self, indexPath.item, self.iTitles[indexPath.item]);
     }
     
     [self changeItemToIndex:indexPath.item animation:YES];

@@ -12,7 +12,10 @@
 
 @property (strong, nonatomic) UILabel *titleLabel; //
 @property (strong, nonatomic) UIView  *markView; //
+@property (strong, nonatomic) UIView  *warningView; //提示
 
+
+- (void)setWarningHidden:(BOOL)hidden;
 ///**
 // * 实例化
 // * @param title 显示的标题

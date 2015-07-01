@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class FEHeaderMenu;
+
 typedef NSString *(^titleAtIndex)(NSInteger index, BOOL *isStop);
-typedef void      (^itemClickAtIndex)(NSInteger index, NSString *title);
+typedef void      (^itemClickAtIndex)(FEHeaderMenu *menu, NSInteger index, NSString *title);
 
 @interface FEHeaderMenu : UIView
 
@@ -18,6 +20,7 @@ typedef void      (^itemClickAtIndex)(NSInteger index, NSString *title);
 @property (strong, nonatomic) NSMutableArray   *iTitles; //所有title的集合
 //@property (assign, nonatomic) NSInteger        maxItemVisible; //能够显示的最大数量，默认值3；多于maxItemVisible的通过滑动显示
 @property (assign, nonatomic) NSInteger  currentIndex; //当前选中的item位置
+@property (assign, nonatomic) BOOL       didAddConstranit; //是否添加了constranit
 
 
 /**
@@ -51,5 +54,12 @@ typedef void      (^itemClickAtIndex)(NSInteger index, NSString *title);
  * 在父类中的UIEdgeInsets
  */
 @property (assign, nonatomic) UIEdgeInsets edgeInsetsInSuperView; //
+
+
+/**
+ * 显示index位置的“警告view”
+ */
+@property (strong, nonatomic) NSMutableArray *warningItems; //
+- (void)showWarning:(BOOL)showOrNot AtIndex:(NSInteger)index;
 
 @end

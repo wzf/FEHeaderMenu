@@ -38,6 +38,7 @@
 
 - (void)_loadSubviews
 {
+    /* -------------------- label -------------------- */
     self.titleLabel = [UILabel new];
     _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _titleLabel.font            = [UIFont systemFontOfSize:14];
@@ -49,15 +50,37 @@
     [self.contentView addSubview:_titleLabel];
     
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[_titleLabel]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_titleLabel)]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_titleLabel]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_titleLabel)]];
+    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:-2];
+    [self.contentView addConstraint:centerY];
     
     
+    /* -------------------- warning view -------------------- */
+    self.warningView = [UIView new];
+    _warningView.translatesAutoresizingMaskIntoConstraints = NO;
+    _warningView.backgroundColor = [UIColor redColor];
+    
+    _warningView.layer.masksToBounds = YES;
+    _warningView.layer.cornerRadius  = 3;
+    
+    _warningView.hidden = YES;
+    
+    [self.contentView addSubview:_warningView];
+    
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:_warningView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_titleLabel attribute:NSLayoutAttributeBottom multiplier:1 constant:2];
+    NSLayoutConstraint *centerX = [NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_warningView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+    [self.contentView addConstraints:@[top,centerX]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_warningView(6)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_warningView)]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_warningView(6)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_warningView)]];
+    
+    
+    /* -------------------- mark view -------------------- */
     self.markView = [UIView new];
     _markView.translatesAutoresizingMaskIntoConstraints = NO;
     _markView.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:_markView];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[_markView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_markView)]];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_markView(3)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_markView)]];
+    
     
 }
 
@@ -70,4 +93,9 @@
     [_markView setHidden:YES];
 }
 
+
+- (void)setWarningHidden:(BOOL)hidden;
+{
+    _warningView.hidden = hidden;
+}
 @end
