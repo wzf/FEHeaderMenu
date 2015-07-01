@@ -28,11 +28,12 @@ pod 'FEHeaderMenu'
         // remove warning 
         [menu showWarning:NO AtIndex:index];
         // do something else
-//        [weakSelf reloadTableViewData:title];
+        //[weakSelf reloadTableViewData:title];
     }];  
 
 
 ##说明：
   1. 菜单项小于4个的，全部展示，菜单不滚动。
   2. 菜单多余4个的，最多展示4个，超出部分依次往后排列，通过滑动展示。
-  2. 标记红条，跟随menuItem滚动
+  3. 标记红条，跟随menuItem滚动
+  4. 带有警告标记，类似于“新消息提示” 
