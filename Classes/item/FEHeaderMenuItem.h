@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FEHeaderMenuItem : UICollectionViewCell
+@interface FEHeaderMenuItem : UICollectionViewCell<UIAppearance>
 
 @property (strong, nonatomic) UILabel *titleLabel; //
 @property (strong, nonatomic) UIView  *markView; //
 @property (strong, nonatomic) UIView  *warningView; //提示
-
 
 - (void)setWarningHidden:(BOOL)hidden;
 ///**

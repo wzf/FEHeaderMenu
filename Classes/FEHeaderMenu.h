@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FEHeaderMenuItem.h"
 
 @class FEHeaderMenu;
 
@@ -22,6 +23,10 @@ typedef void      (^itemClickAtIndex)(FEHeaderMenu *menu, NSInteger index, NSStr
 @property (assign, nonatomic) NSInteger  currentIndex; //当前选中的item位置
 @property (assign, nonatomic) BOOL       didAddConstranit; //是否添加了constranit
 
+@property (strong, nonatomic) UIColor *itemTitleNormalColor UI_APPEARANCE_SELECTOR; //普通状态的title color
+@property (strong, nonatomic) UIColor *itemTitleSelectedColor UI_APPEARANCE_SELECTOR; //选中状态的title color
+@property (strong, nonatomic) UIColor *markViewColor UI_APPEARANCE_SELECTOR; //
+@property (strong, nonatomic) UIColor *warningViewColor UI_APPEARANCE_SELECTOR; //
 
 /**
  * 初始化菜单界面

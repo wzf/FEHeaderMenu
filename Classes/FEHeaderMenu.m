@@ -21,6 +21,23 @@
         self.currentIndex       = 0;    //默认显示
         self.edgeInsetsInSuperView = UIEdgeInsetsMake(0, 0, 0, 0);
         self.warningItems       = [NSMutableArray array];
+        
+        if ([FEHeaderMenu appearance].itemTitleNormalColor == nil) {
+            [FEHeaderMenu appearance].itemTitleNormalColor = [UIColor blackColor];
+        }
+        
+        if ([FEHeaderMenu appearance].itemTitleSelectedColor == nil) {
+            [FEHeaderMenu appearance].itemTitleSelectedColor = [UIColor redColor];
+        }
+        
+        if ([FEHeaderMenu appearance].markViewColor == nil) {
+            [FEHeaderMenu appearance].markViewColor = [UIColor redColor];
+        }
+        
+        if ([FEHeaderMenu appearance].warningViewColor == nil) {
+            [FEHeaderMenu appearance].warningViewColor = [UIColor redColor];
+        }
+        
     }
     return self;
 }
@@ -156,4 +173,5 @@
         [item setWarningHidden:!showOrNot];
     }
 }
+
 @end

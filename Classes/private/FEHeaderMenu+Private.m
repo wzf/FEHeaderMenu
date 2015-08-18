@@ -70,7 +70,7 @@ static const NSString *kMarkViewLayoutWidthKey   = @"markViewLayoutWidth";
     
 
     self.iMarkView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 3)];
-    [self.iMarkView setBackgroundColor:[UIColor redColor]];
+    [self.iMarkView setBackgroundColor:[FEHeaderMenu appearance].markViewColor];
     [self addSubview:self.iMarkView];
     [self sendSubviewToBack:self.iMarkView];
 }

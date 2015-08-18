@@ -7,6 +7,7 @@
 //
 
 #import "FEHeaderMenuItem.h"
+#import "FEHeaderMenu.h"
 
 @implementation FEHeaderMenuItem
 
@@ -44,7 +45,8 @@
     _titleLabel.font            = [UIFont systemFontOfSize:14];
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.textColor       = [UIColor blackColor];
-    _titleLabel.highlightedTextColor = [UIColor redColor];
+    _titleLabel.highlightedTextColor = [FEHeaderMenu appearance].itemTitleSelectedColor;
+    _titleLabel.textColor       = [FEHeaderMenu appearance].itemTitleNormalColor;//_itemTitleNormalColor ? _itemTitleNormalColor : [UIColor blackColor];
     _titleLabel.textAlignment   = NSTextAlignmentCenter;
     
     [self.contentView addSubview:_titleLabel];
@@ -57,7 +59,7 @@
     /* -------------------- warning view -------------------- */
     self.warningView = [UIView new];
     _warningView.translatesAutoresizingMaskIntoConstraints = NO;
-    _warningView.backgroundColor = [UIColor redColor];
+    _warningView.backgroundColor = [FEHeaderMenu appearance].warningViewColor;
     
     _warningView.layer.masksToBounds = YES;
     _warningView.layer.cornerRadius  = 3;
@@ -76,7 +78,7 @@
     /* -------------------- mark view -------------------- */
     self.markView = [UIView new];
     _markView.translatesAutoresizingMaskIntoConstraints = NO;
-    _markView.backgroundColor = [UIColor redColor];
+    _markView.backgroundColor = [FEHeaderMenu appearance].markViewColor;
     [self.contentView addSubview:_markView];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[_markView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_markView)]];
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_markView(3)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_markView)]];
@@ -98,4 +100,5 @@
 {
     _warningView.hidden = hidden;
 }
+
 @end
