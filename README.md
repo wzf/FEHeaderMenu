@@ -17,7 +17,7 @@ pod 'FEHeaderMenu'
 ##用法：
     NSArray *titles = @[@"未读",@"已读",@"垃圾箱"];
     
-    // set appearnce color
+    // set appearance color
     [[FEHeaderMenu appearance] setItemTitleNormalColor:[UIColor blueColor]];
     [[FEHeaderMenu appearance] setItemTitleSelectedColor:[UIColor redColor]];
     [[FEHeaderMenu appearance] setMarkViewColor:[UIColor greenColor]];
