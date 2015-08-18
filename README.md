@@ -9,13 +9,20 @@
   - (void)showWarning:(BOOL)showOrNot AtIndex:(NSInteger)index;
 
 ##tag
-当前tag ~> 0.0.2
+当前tag ~> 0.0.3
 
 ##Pod
 pod 'FEHeaderMenu'
 
 ##用法：
     NSArray *titles = @[@"未读",@"已读",@"垃圾箱"];
+    
+    // set appearnce color
+    [[FEHeaderMenu appearance] setItemTitleNormalColor:[UIColor blueColor]];
+    [[FEHeaderMenu appearance] setItemTitleSelectedColor:[UIColor redColor]];
+    [[FEHeaderMenu appearance] setMarkViewColor:[UIColor greenColor]];
+    [[FEHeaderMenu appearance] setWarningViewColor:[UIColor orangeColor]];
+
     // init
     __weak typeof(self) weakSelf = self;
     FEHeaderMenu *headMenu = [FEHeaderMenu menuWithTitleAtIndex:^NSString *(NSInteger index, BOOL *isStop) {

@@ -20,13 +20,15 @@
     
     
     NSArray *titles = @[@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱"];
-    
+
     __weak typeof(self) weakSelf = self;
+    // set appearnce color
     [[FEHeaderMenu appearance] setItemTitleNormalColor:[UIColor blueColor]];
     [[FEHeaderMenu appearance] setItemTitleSelectedColor:[UIColor redColor]];
     [[FEHeaderMenu appearance] setMarkViewColor:[UIColor greenColor]];
     [[FEHeaderMenu appearance] setWarningViewColor:[UIColor orangeColor]];
     
+    // init
     FEHeaderMenu *headMenu = [FEHeaderMenu menuWithTitleAtIndex:^NSString *(NSInteger index, BOOL *isStop) {
         if (index == titles.count-1) {
             *isStop = YES;
