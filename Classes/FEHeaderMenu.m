@@ -70,11 +70,10 @@
     self.iMarkView.center = CGPointMake(point.x, self.iMarkView.center.y);
 }
 
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
     // 避免显示“半个item”的情况
-    CGFloat offsetX   = scrollView.contentOffset.x;
+    CGFloat offsetX   = (*targetContentOffset).x;
     CGFloat itemWidth = [self.iCollectionView layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]].size.width;
     //
     if (itemWidth) {
@@ -83,10 +82,10 @@
         //
         CGFloat itemOffset = (int)offsetX % (int)itemWidth;
         if (itemOffset <= itemWidth/2.0) {
-            [scrollView setContentOffset:CGPointMake(index*itemWidth, 0)  animated:YES];
+            (*targetContentOffset).x = index*itemWidth;
         }
         else {
-            [scrollView setContentOffset:CGPointMake((index+1)*itemWidth, 0)  animated:YES];
+            (*targetContentOffset).x = (index+1)*itemWidth;
         }
     }
 }
