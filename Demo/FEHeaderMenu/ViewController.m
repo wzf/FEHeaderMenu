@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "FEHeaderMenu.h"
+#import "DetailViewController.h"
 
 @interface ViewController()
 @property (weak, nonatomic) FEHeaderMenu *headerMenu;
@@ -19,7 +20,7 @@
     [super viewDidLoad];
     
     
-    NSArray *titles = @[@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱"];
+    NSArray *titles = @[@"未读",@"已读",@"垃圾箱",@"未读",@"已读"/*,@"垃圾箱",@"未读",@"已读",@"垃圾箱",@"未读",@"已读",@"垃圾箱"*/];
 
     __weak typeof(self) weakSelf = self;
     // set appearnce color
@@ -92,6 +93,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    DetailViewController *target = [DetailViewController new];
+    [self.navigationController pushViewController:target animated:YES];
 }
 
 @end

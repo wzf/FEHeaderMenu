@@ -10,6 +10,7 @@
 		0B2E80011B43871C00B9F38B /* FEHeaderMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E7FFA1B43871C00B9F38B /* FEHeaderMenu.m */; };
 		0B2E80021B43871C00B9F38B /* FEHeaderMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E7FFD1B43871C00B9F38B /* FEHeaderMenuItem.m */; };
 		0B2E80031B43871C00B9F38B /* FEHeaderMenu+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E80001B43871C00B9F38B /* FEHeaderMenu+Private.m */; };
+		0B5750351BFDABC700E1CC72 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5750341BFDABC700E1CC72 /* DetailViewController.m */; };
 		0B5BAB451B3BA76100D44BAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB441B3BA76100D44BAD /* main.m */; };
 		0B5BAB481B3BA76100D44BAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB471B3BA76100D44BAD /* AppDelegate.m */; };
 		0B5BAB4B1B3BA76100D44BAD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5BAB4A1B3BA76100D44BAD /* ViewController.m */; };
@@ -36,6 +37,8 @@
 		0B2E7FFD1B43871C00B9F38B /* FEHeaderMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEHeaderMenuItem.m; sourceTree = "<group>"; };
 		0B2E7FFF1B43871C00B9F38B /* FEHeaderMenu+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FEHeaderMenu+Private.h"; sourceTree = "<group>"; };
 		0B2E80001B43871C00B9F38B /* FEHeaderMenu+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FEHeaderMenu+Private.m"; sourceTree = "<group>"; };
+		0B5750331BFDABC700E1CC72 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0B5750341BFDABC700E1CC72 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		0B5BAB3F1B3BA76100D44BAD /* FEHeaderMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FEHeaderMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5BAB431B3BA76100D44BAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B5BAB441B3BA76100D44BAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				0B5BAB4F1B3BA76100D44BAD /* Images.xcassets */,
 				0B5BAB511B3BA76100D44BAD /* LaunchScreen.xib */,
 				0B5BAB421B3BA76100D44BAD /* Supporting Files */,
+				0B5750331BFDABC700E1CC72 /* DetailViewController.h */,
+				0B5750341BFDABC700E1CC72 /* DetailViewController.m */,
 			);
 			path = FEHeaderMenu;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				0B5BAB481B3BA76100D44BAD /* AppDelegate.m in Sources */,
 				0B2E80011B43871C00B9F38B /* FEHeaderMenu.m in Sources */,
 				0B5BAB451B3BA76100D44BAD /* main.m in Sources */,
+				0B5750351BFDABC700E1CC72 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FEHeaderMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -401,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FEHeaderMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

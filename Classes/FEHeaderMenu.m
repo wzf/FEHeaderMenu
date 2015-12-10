@@ -70,6 +70,27 @@
     self.iMarkView.center = CGPointMake(point.x, self.iMarkView.center.y);
 }
 
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;
+{
+    // 避免显示“半个item”的情况
+    CGFloat offsetX   = scrollView.contentOffset.x;
+    CGFloat itemWidth = [self.iCollectionView layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]].size.width;
+    //
+    if (itemWidth) {
+        // index
+        NSInteger index = (int)offsetX/itemWidth;
+        //
+        CGFloat itemOffset = (int)offsetX % (int)itemWidth;
+        if (itemOffset <= itemWidth/2.0) {
+            [scrollView setContentOffset:CGPointMake(index*itemWidth, 0)  animated:YES];
+        }
+        else {
+            [scrollView setContentOffset:CGPointMake((index+1)*itemWidth, 0)  animated:YES];
+        }
+    }
+}
+
 - (void)didMoveToSuperview
 {
     [super didMoveToSuperview];

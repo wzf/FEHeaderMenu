@@ -13,6 +13,7 @@ static const NSString *kICollectionKey = @"iCollection";
 static const NSString *kIMarkViewKey   = @"iMarkView";
 static const NSString *kMarkViewLayoutCenterKey  = @"markViewLayoutCenter";
 static const NSString *kMarkViewLayoutWidthKey   = @"markViewLayoutWidth";
+static const NSString *kFirstSelect   = @"firstSelect";
 
 @implementation FEHeaderMenu (Private)
 //@dynamic iCollectionView;
@@ -57,7 +58,7 @@ static const NSString *kMarkViewLayoutWidthKey   = @"markViewLayoutWidth";
     [self.iCollectionView registerClass:[FEHeaderMenuItem class] forCellWithReuseIdentifier:@"cell"];
     [self.iCollectionView setShowsHorizontalScrollIndicator:NO];
     [self.iCollectionView setShowsVerticalScrollIndicator:NO];
-    [self.iCollectionView setPagingEnabled:YES];
+//    [self.iCollectionView setPagingEnabled:YES];
     
     //
     [self addSubview:self.iCollectionView];
@@ -96,10 +97,9 @@ static const NSString *kMarkViewLayoutWidthKey   = @"markViewLayoutWidth";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{   
-    static BOOL firstSelect = NO;
-    if (firstSelect == NO) {
-        firstSelect = YES;
+{
+    if (self.firstSelect == NO) {
+        self.firstSelect = YES;
         [[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentIndex inSection:0]] setSelected:NO];
     }
     
@@ -135,4 +135,13 @@ static const NSString *kMarkViewLayoutWidthKey   = @"markViewLayoutWidth";
     return objc_getAssociatedObject(self, &kIMarkViewKey);
 }
 
+- (void)setFirstSelect:(BOOL)firstSelect
+{
+    objc_setAssociatedObject(self, &kFirstSelect, @(firstSelect), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (BOOL)firstSelect
+{
+    return [objc_getAssociatedObject(self, &kFirstSelect) boolValue];
+}
 @end

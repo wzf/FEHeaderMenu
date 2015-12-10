@@ -10,6 +10,7 @@
 //#import "FEHeaderMenuItem.h"
 
 @interface FEHeaderMenu (Private)<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
 @property (strong, nonatomic) UICollectionView *iCollectionView; //
 
 /**
@@ -22,6 +23,7 @@
  */
 - (void)reloadItemsIfNeeds;
 
-
 @property (strong, nonatomic) UIView *iMarkView; //
+
+@property (assign, nonatomic) BOOL firstSelect;
 @end
