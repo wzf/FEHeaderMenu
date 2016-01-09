@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "63BAD04CA415B21AE9DDCBA4D17E21DC27538CD2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "63BAD04CA415B21AE9DDCBA4D17E21DC27538CD2" : 0,
+    "9E1ECC80773D1F4F22D03CB4DEA298B3CB57FAF5" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0A6A2F17-ECD9-495D-B66D-1ADA0F9FDD53",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "63BAD04CA415B21AE9DDCBA4D17E21DC27538CD2" : "FEHeaderMenu\/",
+    "9E1ECC80773D1F4F22D03CB4DEA298B3CB57FAF5" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FEHeaderMenu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Demo\/FEHeaderMenu.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wzf\/FEHeaderMenu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "63BAD04CA415B21AE9DDCBA4D17E21DC27538CD2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wzf\/SVProgressHUD-FE.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9E1ECC80773D1F4F22D03CB4DEA298B3CB57FAF5"
+    }
+  ]
+}

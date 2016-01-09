@@ -54,6 +54,12 @@ typedef void      (^itemClickAtIndex)(FEHeaderMenu *menu, NSInteger index, NSStr
  */
 - (void)changeItemToIndex:(NSInteger)index animation:(BOOL)animation;
 
+/**
+ * 选中index位置上的item
+ * @param index 要显示的位置
+ * @param animation 是否需要动画
+ */
+- (void)selectItemAtIndex:(NSInteger)index animation:(BOOL)animation;
 
 /**
  * 在父类中的UIEdgeInsets

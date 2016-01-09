@@ -184,6 +184,14 @@
     }];
 }
 
+// 选中index位置上的item
+- (void)selectItemAtIndex:(NSInteger)index animation:(BOOL)animation;
+{
+    [self changeItemToIndex:index animation:animation];
+    self.currentIndex = index;
+    [self.iCollectionView reloadData];
+}
+
 // 显示index位置的“警告view”
 - (void)showWarning:(BOOL)showOrNot AtIndex:(NSInteger)index;
 {
